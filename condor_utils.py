@@ -133,7 +133,7 @@ def make_htcondor_cluster(
                 "transfer_input_files": ",".join(input_files),
                 "JobBatchName": '"daskworker"',
                 "x509userproxy": proxy_file,
-                "+SingularityImage":'"/cvmfs/singularity.opensciencegrid.org/bbockelm/cms:rhel6"',
+                "+SingularityImage":'"/cvmfs/singularity.opensciencegrid.org/bbockelm/cms:rhel7"',
                 "Stream_Output": False,
                 "Stream_Error": False,
                 "+DESIRED_Sites":'"T2_US_UCSD"',
