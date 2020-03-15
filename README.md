@@ -32,6 +32,7 @@ conda create --name analysisenv uproot dask matplotlib pandas jupyter hdfs3 -y
 conda run --name workerenv pip install dask-jobqueue
 conda run --name analysisenv pip install jupyter-server-proxy dask-jobqueue
 
+
 # make the tarball for the worker nodes
 conda pack -n workerenv --arcroot workerenv -f --format tar.gz \
     --compress-level 9 -j 8 --exclude "*.pyc" --exclude "*.js.map" --exclude "*.a"
@@ -66,6 +67,11 @@ Start analysis jupyter notebook:
 ( conda activate analysisenv && jupyter notebook --no-browser )
 ```
 and then run `cluster.ipynb`.
+
+## make conda work with root
+conda install root -c conda-forge
+conda config --add --env channels conda-forge
+https://iscinumpy.gitlab.io/post/root-conda/
 
 ## Misc notes
 
